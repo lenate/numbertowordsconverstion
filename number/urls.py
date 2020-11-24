@@ -4,5 +4,6 @@ from .import views as v
 urlpatterns = [
     
     path("", v.task, name="task"),
-    path("result", v.convert, name="result")
+    path("result", v.convert, name="result"),
+    
 ]

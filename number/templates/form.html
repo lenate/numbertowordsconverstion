@@ -12,17 +12,20 @@
     function validate()
     {
       var num=document.getElementById("nmb").value;
+      
     
-      // if(num>7)
-      // {
-      //   // alert("number should be between 1 - 6 ")
-      //   document.getElementById("message").innerHTML="number should be between 1 - 6 "
-      //   return false;
-      // }
+      
       if(isNaN(num))
       {
          document.getElementById("message").innerHTML="only digits";
          return false;
+      }
+      else if(isNaN(num)||num<1||num>9999999)
+      {
+      
+        
+        document.getElementById("message").innerHTML="number should be between 1 - 9999999 ";
+        return false;
       }
     }
     
@@ -52,7 +55,7 @@
   <form action="result" method="POST" >
     <div class="form-group">
       <label for="nmb">Input:</label>
-      <input type="text" class="form-control" id="nmb" placeholder="Enter number" name="nmb" value="">
+      <input type="text" class="form-control" id="nmb" placeholder="Enter number" name="nmb" value="" >
       <span id="message"></span>
     </div>
    

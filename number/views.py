@@ -1,6 +1,4 @@
 from django.shortcuts import render,HttpResponse
-from gtts import gTTS
-import os
 
 def task(request):
     return render(request,'form.html')
@@ -50,8 +48,6 @@ def convert(request):
             if d[0] != 0:
                 num += number[d[0]]
         # print(num)
-    language='en'
-    output=gTTS(text=num,lang=language,slow=False)
-    output.save("output.mp3")
-    os.system("start output.mp3")
+    
     return render(request,'display.html',{"result": num})
+     
